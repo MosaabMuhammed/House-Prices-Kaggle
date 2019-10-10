@@ -1,6 +1,7 @@
 '''
 Author:      Mosaab Muhammed.
 Date:        10/10/2019
+Title:       EDA & Data Investigation & NaN Filling.
 Description: The aim of this script is to fill in the 'NaN' values, and
 			 output that results to ./output/ folder.
 '''
