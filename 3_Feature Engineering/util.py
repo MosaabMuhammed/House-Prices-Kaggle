@@ -30,8 +30,11 @@ def var2str(var):
 
 
 def shape(*args):
+    max_len = 0
     for df in args:
-        print(f'~> [{var2str(df).ljust(5)}] has {bg(df.shape[0])} rows, and {bg(df.shape[1])} columns.')
+        max_len = max(len(var2str(df)), max_len)
+    for df in args:
+        print(f'~> [{var2str(df).ljust(max_len)}] has {bg(df.shape[0])} rows, and {bg(df.shape[1])} columns.')
 
 
 ############### Summary Table #####################
