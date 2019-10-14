@@ -72,7 +72,7 @@ from tqdm import tqdm_notebook
 
 
 def reduce_mem_usage(df):
-    start_mem = df.memory_usage().sum() / 1024 < b > 3
+    start_mem = df.memory_usage().sum() / 1024**3
     print('~> Memory usage of dataframe is {:.3f} GB'.format(start_mem))
 
     for col in tqdm_notebook(df.columns):
@@ -108,7 +108,7 @@ def reduce_mem_usage(df):
         # else:
             # df[col] = df[col].astype('category')
 
-    end_mem = df.memory_usage().sum() / 1024 < b > 3
+    end_mem = df.memory_usage().sum() / 1024 ** 3
     print('~> Memory usage after optimization is: {:.3f} GB'.format(end_mem))
     print('~> Decreased by {:.1f}%'.format(100 * (start_mem - end_mem) / start_mem))
     print('---' * 20)
